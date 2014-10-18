@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #F8CDF8;
+      }
+      
+      h1 {
+        color: orange;
+        text-align: center;
+      }
+      
+      ul {
+        font-family: "Helvetica";
+        font-size: 15px;
+      }
+      .photos {
+        display: none;
+      }
+    </style>
+    
+    <script type="text/javascript" src="jquery.js">
+    </script>
+<script>
+//OUR CODE GOES HERE
+$(document).ready(function() 
+{
+    $(".see-photos").on("click", function(event) 
+    {
+		event.stopPropagation(); //prevents propagation of command up the DOM
+        event.preventDefault(); // prevents browser behaviour of refreshing from start.
+        $(this).closest(".tour").find(".photos").slideToggle();
+    }
+    );
+        
+    $(".tour").on("click", function() 
+    {
+    	alert("You will have to wait until the website is complete!!");
+    }
+    );
+});    
+</script>
+  </head>
+  <body>
+    <div id="all-tours" class="links">
+      <h1>
+        Guided Tours
+      </h1>
+      <ul>
+        <li class="tour usa" data-discount="199">
+          <h2>
+            New York, USA
+          </h2>
+          <span class="details">
+            $1,899 for 7 nights
+          </span>
+          <button class="book">
+            Book Now
+          </button>
+          <a href="#" class="see-photos">
+            See Photos
+          </a>
+          <ul class="photos">
+            <li>
+              <img src="arc.jpeg">
+              <span>
+                Arc de Triomphe
+              </span>
+            </li>
+            <li>
+              <img src="eiffel.jpeg">
+              <span>
+                The Eiffel Tower
+              </span>
+            </li>
+            <li>
+              <img src="notredame.jpeg">
+              <span>
+                Notre Dame de Paris
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li class="tour france" data-discount="99">
+          <h2>
+            Paris, France
+          </h2>
+          <span class="details">
+            $1,499 for 5 nights
+          </span>
+          <button class="book">
+            Book Now
+          </button>
+          <a href="#" class="see-photos">
+            See Photos
+          </a>
+                    <ul class="photos">
+            <li>
+              <img src="arc.jpeg">
+              <span>
+                Arc de Triomphe
+              </span>
+            </li>
+            <li>
+              <img src="eiffel.jpeg">
+              <span>
+                The Eiffel Tower
+              </span>
+            </li>
+            <li>
+              <img src="notredame.jpeg">
+              <span>
+                Notre Dame de Paris
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li class="tour uk" data-discount="149">
+          <h2>
+            London, UK
+          </h2>
+          <span class="details">
+            $2,199 for 5 nights
+          </span>
+          <button class="book">
+            Book Now
+          </button>
+          <a href="#" class="see-photos">
+            See Photos
+          </a>
+       <ul class="photos">
+            <li>
+              <img src="arc.jpeg">
+              <span>
+                Arc de Triomphe
+              </span>
+            </li>
+            <li>
+              <img src="eiffel.jpeg">
+              <span>
+                The Eiffel Tower
+              </span>
+            </li>
+            <li>
+              <img src="notredame.jpeg">
+              <span>
+                Notre Dame de Paris
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+  </body>
+</html>

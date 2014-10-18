@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Learning HTML5</title>
+    <base href="http://localhost/html5/" />
+    <meta name="author" content="Srinivas Narayan" />
+    <meta name="description" content="Learning HTML5" />
+    <meta name="application name" content="Learn HTML5" />
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="600" /> <!-- ask browser to refresh every 100 seconds -->
+    
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    
+    <style  media="screen AND (max-width:500px)" type="text/css">
+        td
+        {
+            background-color: grey;
+            color: red;
+            border: thin dashed red;
+        }
+        .sometable
+       {
+         background-color: yellow;
+         color: blue;
+         margin:2px;
+         padding: 5px;
+         border: thin solid red;
+       }
+       .outerlist
+       {
+            background-color: yellow;
+            color: red;
+            
+       }
+       .innerlist
+       {
+            background-color: yellow;
+            color: blue;
+        }
+        
+    </style>
+    <style  media="screen AND (min-width:500px)" type="text/css">
+        td
+        {
+            background-color: grey;
+            color: blue;
+            
+        }
+        .sometable
+       {
+         background-color: grey;
+         color: blue;
+         margin:2px;
+         padding: 5px;
+         border: thin solid red;
+       }
+       .outerlist
+       {
+            background-color: grey;
+            color: red;
+            
+       }
+       .innerlist
+       {
+            background-color: grey;
+            color: blue;
+        }
+        
+    </style>
+    <style  media="print" type="text/css">
+        td
+        {
+            background-color: grey;
+            color: aqua;
+            border: thin dashed red;
+            font-weight: bold;
+            font-family: cursive;
+        }
+        .sometable
+       {
+         background-color: yellow;
+         color: blue;
+         margin:2px;
+         padding: 5px;
+         border: thin solid red;
+       }
+       .outerlist
+       {
+            background-color: yellow;
+            color: red;
+            margin: 2px;
+            padding: 5px;
+            width: 200px;
+            border: thin solid blue;
+       }
+       .innerlist
+       {
+            background-color: yellow;
+            color: blue;
+        }
+    </style>
+    <script>
+        document.writeln("This is from script in the head section.<br />");
+    </script>
+</head>
+
+<body>
+    <p>How many fingers (0 - 10) are you holding up? :
+    <input id="myNumber" /> </p>
+    <button id="guess">Guess!</button>
+    <p id="answer">Answer here!</p>
+    
+    <p>Enter number of small squares between Q and T : <input id="qt" /> </p>
+    <p>Enter number of small squares between R and R : <input id="rr" /> </p>
+    <button id="qtc">Calculate QTc!</button>
+    <p id="qtca">QTc is here!</p>
+    
+    <script type="text/javascript">
+    
+ 		document.getElementById("qtc").onclick = function() {
+    		var qt=document.getElementById("qt").value;
+    		var rr=document.getElementById("rr").value;
+    		var qtca = (qt * 0.04) / (Math.pow((0.04 * rr),0.5));
+    		document.getElementById("qtca").innerHTML = "QTc is = " + qtca;
+    	};
+    
+    
+    
+    	document.getElementById("guess").onclick = function() {
+    	
+    		var correctnum = document.getElementById("myNumber").value;
+    		var computerguess ="";
+    		var guess=1;
+    		while (correctnum != computerguess)
+    		{
+    			computerguess = Math.floor(11 * Math.random());
+    			document.getElementById("answer").innerHTML = "Attempt(s) :" + guess + " Computer guessed :" + computerguess;
+    			guess++;
+    			if (guess > 100) 
+    			{
+    				computerguess = correctnum;
+    				document.getElementById("answer").innerHTML = "Attempt(s) :" + guess + " Giving up.....";
+    			}
+    			
+    		//alert (computerguess);
+    		}
+    	
+    	}; //end of statement.
+    
+    // var myGlobalVar = "Apples";
+    function myFunc(name, weather)
+    {
+        var nl = "<br />";
+        var myLocalVar = "sunny";
+        var secondString = 'this is also a string <br />';
+        var firstBool = false;
+        var wkday = 7;
+        var pi = 3.1415927;
+        var hexVal = 0x10;
+        var myObj = new Object();
+            myObj.name = "Srinivas";
+            myObj.place = "Harrow";
+        var litObj = {
+            name: "Adam",
+            weather: "sunny",
+            printMessages: function() {
+                document.writeln("Hello " + this.name + "!" + nl);
+                document.writein("Today is " + this.weather + "!!!" + nl);
+            }
+        };
+        document.writeln("Hello! " + name + ". <br />");
+        document.writeln("Wish it was " + myLocalVar + " today. <br />");
+        document.writeln("It is " + weather + " today. <br />");
+        document.writeln(secondString + firstBool);
+        document.writeln("wkday = " + wkday + " pi = " + pi + " hexVal = " + hexVal + nl);
+        document.writeln(myObj.name + " " + myObj.place + nl);
+        litObj.printMessages();
+        litObj.name = "Aditya"; litObj.weather="balmy";
+        litObj.printMessages();
+        var propName = "place";
+        myObj[propName] = "Tumkur";
+        document.writeln("Place is now =" + myObj.place + nl);
+        litObj.sayHello = function() {
+            document.writeln("This is fun!" + nl);
+        };
+        for (var prop in litObj) {
+            document.writeln( "Property: " + prop + " Value = " + litObj[prop] + nl);
+        }
+        litObj.sayHello();
+        //now delete that
+        delete litObj.sayHello;
+        //check if deleted!
+        for (var p in litObj) {
+            document.writeln( "Property: " + p + " Value = " + litObj[p] + nl);
+        } //does get deleted!
+        
+        var hasPlace = "place" in myObj;
+        document.writeln ("Place exists =" + hasPlace + nl) ;
+        hasPlace = "place" in litObj;
+        document.writeln ("Place exists =" + hasPlace + nl) ;
+        //string conversion confusion!!
+        document.writeln("Result of 5 + '5' =" + 5 + "5" + nl);
+        //force precedence to get correct result!
+        document.writeln("Result of 5 + 5 =" + (5 + 5) + nl);
+        //use try - catch
+        try {
+            var myArray;  //= ["Sri", "Ranj", "Adi"];
+            for (var i=0; i< myArray.length; i++) {
+                document.writeln("Index = " + i + " Element = " + myArray[i] + nl);
+            }
+        } catch(e) {
+            document.writeln("Error :" + e + nl);
+        }
+        finally {
+            document.writeln("This is always done! <br />");
+        }
+    }
+        
+    myFunc("Srinivas", "rainy");
+        
+        
+    
+</script>
+
+<ul id="outerlist" class="outerlist" style="list-style-type: upper-roman">
+    <li>Bananas</li>
+    <li>Mangoes, including :</li>
+        <ul id="innerlist" class="innerlist">
+            <li>Haden Mangoes</li>
+            <li>Keitt Mangoes</li>
+            <li>Kent Mangoes</li>
+            <li>Alphonso Mangoes</li>
+        </ul>
+    <li>Cherries</li>
+    <li>Plums, including</li>
+        <ul id="cherryList" class="innerlist">
+            <li>Elephant Heart plums</li>
+            <li>Stanley plums</li>
+            <li>Seneca plums</li>
+        </ul>
+    <li>Peaches</li>
+    <li>Grapes</li>
+</ul>
+<br />
+I like <code id="applecode">Apples</code> and Oranges. <br />
+<script>
+    function cherry()
+    {
+        document.getElementById("applecode").innertext = "Cherries";
+    }
+    cherry();
+</script>
+The formula of water is: H<sub>2</sub>O
+<br />
+The quadratic equation is: ax<sup>2</sup>+bx+c = 0;
+<br/>
+The time now is: <time>08:13</time>
+the variable is <var>yourVar</var>;
+<table class="sometable" id="sometable" >
+    <caption>Example Table</caption>
+    <thead>Name</thead>
+    <tr><td>Aditya</td></tr>
+    <tr><td>Srinivas</td></tr>
+    <tr><td>Ranjini</td></tr>
+    
+</table>
+<!-- The following is still not implemented! -->
+<command>This is a command</command>
+</body>
+</html>

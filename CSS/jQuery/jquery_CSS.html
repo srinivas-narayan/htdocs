@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: #d0e4fe;
+}
+
+h1 {
+    color: Red;
+    text-align: center;
+}
+
+ul {
+    font-family: "Helvetica";
+    font-size: 15px;
+}
+.photos {
+ display: none;
+}
+.highlight {
+ background-color: #ffffff;
+ font-weight: bold;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+//OUR CODE GOES HERE
+$(document).ready(function() {
+  $(".tour").on("mouseenter", function() {
+    $(this).addClass("highlight");
+    $(this).find(".photos").show();
+  });
+  $(".tour").on("mouseleave",function() {
+    $(this).removeClass("highlight");
+    $(this).find(".photos").hide();
+  });
+});
+
+</script>
+</head>
+<body>
+<div id="all-tours">
+  <h1>Guided Tours</h1>
+  <ul>
+    <li class="tour usa">
+      <h2>New York, New York</h2>
+      <span class="details">$1,899 for 7 nights</span>
+      <span class="per-night"><span class="price">$275</span>/night</span>
+      <button class="book">Book Now</button>
+      <ul class="photos">
+        <li>
+          <img src="/assets/photos/newyork1.jpg">
+          <span>Notre Dame de Paris</span>
+        </li>
+      </ul>
+    </li>
+    <li class="tour france" data-discount="99">
+      <h2>Paris, France</h2>
+      <span class="details">$1,499 for 5 nights</span>
+      <span class="per-night"><span class="price">$300</span>/night</span>
+      <button class="book">Book Now</button>
+      <ul class="photos">
+        <li>
+          <img src="/assets/photos/paris3.jpg">
+          <span>Brooklyn Bridge</span>
+        </li>
+      </ul>
+    </li>
+    <li class="tour uk" data-discount="149">
+      <h2>London, UK</h2>
+      <span class="details">$2,199 for 5 nights</span>
+      <span class="per-night"><span class="price">$440</span>/night</span>
+      <button class="book">Book Now</button>
+      <ul class="photos">
+        <li>
+          <img src="/assets/photos/london.jpg">
+          <span>Tower of London</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+</body>
+</html>

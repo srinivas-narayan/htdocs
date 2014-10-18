@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--This is a HTML5 document, built for learning HTML5 -->
+<html>
+<head>
+    <title>First Page</title>
+    <script>
+        var toggleHidden = function() {
+            var elem = document.getElementById("toggle");
+            if (elem.hasAttribute("hidden")) {
+                elem.removeAttribute("hidden");
+            } else {
+                elem.setAttribute("hidden","hidden");
+            }
+        }
+    </script>
+<link rel="stylesheet" type="text/css" href="http://localhost/css/styles.css" />
+</head>
+
+<body>
+    <div class="purplebox">
+     	<p class="large"> This is some text </p>
+    </div>
+    <div class="redbox">
+     <p id="green" class="large"> This is some more text....</p>
+    
+    </div>
+    <p> The third <span class="underline large bold"> word </span> in this paragraph 
+    is underlined </p>
+    
+    <form>
+        <table>
+        <tr><label><td>Name: </td><td><input type="text" name="name" tabindex="1" /></td></label></tr>
+        <tr><label><td>City:</td></label><td><input type="text" name="city" tabindex="2" /></td></tr>
+        <tr><td><input type="submit" tabindex="3" /></td></label></tr>
+        </table>
+    </form>
+    <textarea id="textareaid" spellcheck="true" cols="45" rows="15">This is some worng text</textarea>
+    </textarea>
+    <p><a href="http://www.bbc.co.uk" style="bbclink">BBC</a>
+    </p>
+    <p lang="en">Hello- How are you</p>
+    <p lang="fr" title="French">Bonjour - comment êtes-vous?</p>
+    <p lang="es" title="Spanish">Hola - ¿cómo estás?</p>
+    <button onclick="toggleHidden()">Toggle</button>
+    <table>
+        <tr><th>Name</th><th>City</th></tr>
+        <tr><td>Adam Freeman</td><td>London</td></tr>
+        <tr><td>Srinivas Narayan</td><td>New York</td></tr>
+        <tr id="toggle" hidden><td>Aditya Narayan</td><td>Harrow</td></tr>
+        <tr><td>Ranjini Nagaraja</td><td>Bangalore</td></tr>
+    </table>
+    <p dir="rtl">This is right to left, like urdu</p>
+    <p dir="ltr">This is the usual left to right, like the rest of the world.</p>
+    <p contenteditable="true" contextmenu="choice1 choice2">I like <code>apples</code> &amp oranges. Apples cost &pound34 a kilo.
+    </p>
+    <p>I like <span>span - apples</span> and oranges.</p>
+    <p><a href="http://www.times.com"> Visit the Times website!</a></p>
+    <a class="class1 class2" href="http://www.apress.com">Apress Web Pages</a>
+    <p></p>
+    <a class="class2 otherclass" href="http://www.w3c.org">W3C web site</a>
+    <p />
+    <a id="w3clink" href="http://www.w3cschool.org">W3c Schools website</a>
+    <script type="text/javascript">
+        var elems = document.getElementsByClassName("otherclass");
+        for (i=0; i<elems.length; i++) {
+            var x = elems[i];
+            x.style.border = "thin solid black";
+            x.style.backgroundColor = "white";
+            x.style.color = "blue";
+        }
+    </script>
+    <form>
+		Name: <input type="text" name="name" accesskey="n" />
+		<p />
+		Password: <input type="password" name="password" accesskey="p" />
+		<p />
+		<input type="submit" value="Login" accesskey="s" />
+    </form>
+
+</body>
+</html>

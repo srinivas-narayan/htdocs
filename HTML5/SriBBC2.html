@@ -1,0 +1,901 @@
+
+<!doctype html>
+
+<html>
+
+<head>
+
+    <title>Sri's BBC News Website</title>
+
+
+
+    <meta charset="utf-8" />
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+   
+
+	<style type="text/css">
+
+	
+
+	body{
+
+		margin:0;
+
+		font-family:arial, helvetica, sans-serif;
+
+	}
+
+	
+
+	#topbar{
+
+		background-color:#820202;
+
+		width:100%;
+
+		height:2.5em;
+
+		color:white;
+
+		opacity:0.95;
+
+	/*	filter: alpha(opacity=95); */
+
+		position:relative;
+
+		z-index:3;
+
+	}
+
+	
+
+	.fixedwidth{
+
+		width:1050px;
+
+		margin:0 auto;
+
+	}
+
+
+
+	#logodiv{
+
+		padding:7px 10px 5px 5px;	
+
+		float:left;
+
+		border-right:1px solid #990000;
+
+	}
+
+	
+
+	#signin{
+
+		padding:10px 90px 13px 12px;
+
+		position: relative;
+
+		font-weight:bold;
+
+		font-size:0.8em;
+
+		float:left;
+
+		border-right:1px solid #990000;
+
+	}
+
+		
+	#topmenu {
+	
+	}
+	
+	#topmenu ul{
+
+		margin:0;
+
+		padding:0;
+
+	}
+
+	
+
+	#topmenu li{
+
+		list-style:none;
+
+		font-size:0.8em;
+
+		font-weight:bold;
+
+		padding:10px 15px 13px 12px;
+
+		border-right:1px solid #990000;
+
+		float:left;
+
+		height:100%
+
+	}
+
+	
+
+	#topmenu ul a{
+
+		text-decoration:none;
+
+		color:white;
+
+	}
+
+	
+
+	#topmenu ul a:hover{
+
+		border-bottom: 2px solid #ff8914;
+
+	}
+
+	
+
+	
+
+	#searchbar{
+
+		margin:0;
+
+		padding:6px 0 6px 15px;
+
+		float:left;
+
+		border:none;
+
+	}
+
+	
+
+	#searchbar input{
+
+		height: 20px;
+
+		padding: 2px 2px 1px 2px;
+
+		font-size: 0.9em;
+
+		background-image: url('images/search.png)';
+
+		background-repeat:no-repeat;
+
+		background-position: right center;
+
+	}
+
+	
+
+	.break{
+
+		clear:both;
+
+	}
+
+		
+
+	#newsbar{
+
+		background-color:#990000;
+
+		width:100%;
+
+		height:5.45em;
+
+		color:white;
+
+	}
+
+	
+
+	#newsbar p{
+
+		margin:0;
+
+		padding:3px 0 3px 6px;
+
+		float:left;
+
+	}
+
+	
+
+	#newsheader{
+
+		font-size:3em;
+
+	}
+
+	
+
+	#uk{
+
+		font-size:0.75em;
+
+		margin-left:15px;
+
+		margin-right:15px;
+
+	}	
+
+	
+
+	#rss{
+
+		font-size:0.8em;
+
+		font-weight:bold;
+
+		float:right;
+
+		margin:35px 0 0 0;
+
+		position:relative;
+
+		z-index:3;
+
+	}
+
+	
+
+	#rss img{
+
+			padding:0 5px 0 10px;
+
+	}
+
+	
+
+	#topicmenu{
+
+		position:relative;
+
+		z-index:3;
+
+	}
+
+	
+
+	#topicmenu ul{
+
+		background-color:#3E0C0D;
+
+		font-weight:bold;
+
+		margin:0;
+
+		padding:5px 0 3px 0;
+
+		height: 17px;
+
+		width:100%;
+
+	}
+
+	
+
+	#topicmenu li{
+
+		list-style:none;
+
+		font-size:0.8em;
+
+		border-right:1px solid #990000;
+
+		float:left;
+
+		padding:0 6px 0 10px;
+
+	}
+
+	
+
+	.selected{
+
+		background-color:#ededed;
+
+		color:#50506d;
+
+		height:21px;
+
+		position:relative;
+
+		top:-5px;
+
+		padding-top: 5px !important;
+
+	}
+
+	
+
+	#content{
+
+		margin:0;
+
+		padding:0;
+
+		width:100%;
+
+		color:#505050;
+
+		font-size:0.75em;
+
+	}
+
+	
+
+	.date{
+
+		font-weight:bold;
+
+		padding:0 5px 0 5px;
+
+	}
+
+	
+
+	h1{
+
+		color: #1f4f82;
+
+		font-size: 3em;
+
+		padding: 3px 0 3px 0;
+
+	}
+
+	
+
+	h1 a{
+
+		text-decoration:none;
+
+	}
+
+	.headlineimage {
+
+		float:left;
+		
+		height: 150px;
+		
+		width: 300px;
+
+	}
+
+	
+
+	.newsitem {
+
+		position: relative;
+
+		left: 15px;
+
+		width: 17em;
+
+		top:-18px;
+
+		float:left;
+
+		font-size:1.1em;
+
+		padding-left:3px;
+
+	}
+
+	
+
+	.newsitem a{
+
+		text-decoration:none;
+
+	}
+
+	
+
+	.newsitem a:hover{
+
+		text-decoration:underline;
+
+	}
+
+	
+
+	.newsitem a:visited{
+
+		text-decoration:none;
+
+	}
+
+	
+
+	.videolink{
+
+		background-image:url('images/video.png');
+
+		background-repeat:no-repeat;
+
+		background-position: left center;
+
+		padding-left: 20px;
+
+	}
+
+	
+
+	.links{
+
+		line-height:1.7em;
+
+	}
+
+	
+
+	#watchlisten{
+
+		background-color:#eeeeee;
+
+		float:right;
+
+		width:370px;
+
+		position:relative;
+
+		top:-50px;
+
+	}
+
+	
+
+	h2{
+
+		color:#505050;
+
+		margin:2px 10px 2px 15px;
+
+		font-size:2em;
+
+	}
+
+	
+
+	.boxes{
+
+		float:right;
+
+		margin:10px 5px 10px 5px;
+
+	}
+
+	
+
+	.leftarrow{
+
+		float:left;
+
+		border: 1px solid #fcfcfc;
+
+		height:140px; 
+
+	}
+
+	
+
+	.watchblock{
+
+		float:left;
+
+		width: 157px; 
+
+		margin: 1px 0 0 0;
+
+		background-color:#d1700e;
+
+		border-right: 1px solid #fcfcfc;
+
+		height:140px; 
+
+	}
+
+	
+
+	.watchblock a{
+
+		color: #fcfcfc;
+
+	}
+
+	
+
+	.watchblock p{
+
+		margin: 8px 3px 8px 3px;
+
+	}
+
+	
+
+	.rightarrow{
+
+		float:left;
+
+		border:none;
+
+		height:140px;
+
+		margin: 1px 0 0 0;
+		
+		width: 28px;
+		
+	
+
+	}
+
+	
+
+	#watchlisten ul{
+
+		
+
+	}
+
+	
+
+	#watchlisten a{
+
+		text-decoration: none;
+
+	}
+
+	
+
+	#watchlisten a:hover{
+
+		text-decoration: underline;
+
+	}
+
+	
+
+	#watchlisten li{
+
+		list-style: none;
+
+		background-image: url('images/live.png');
+
+		background-repeat: no-repeat;
+
+		background-position:left center;
+
+		padding: 10px 0px 10px 40px;
+
+		font-size: 1.1em;
+
+	}
+
+	
+
+	.border{
+
+		border-bottom: 1px solid #e2e4e9;
+
+		position: left;
+
+	}
+
+	
+
+	</style>    
+
+
+
+</head>
+
+
+
+<body>
+
+	<div id="container">
+
+			
+
+		
+
+		<div id="topbar">
+
+			<div class="fixedwidth">
+
+			
+
+				<div id="logodiv">
+
+					<a href="http://www.bbc.com/news/uk" target="_blank"> 
+
+					<img src="images/bbclogo.png" />
+
+					</a>
+
+				</div>
+
+			
+
+				<div id="signin">
+
+					Sign in
+
+				</div>
+
+				
+
+				<div id="topmenu">
+
+					<ul>
+
+						<li><a href="http://www.bbc.com/news/" target="_blank"> News </a></li>
+
+						<li><a href="http://www.bbc.co.uk/sport/" target="_blank"> Sport  </a></li>
+
+						<li><a href="http://www.bbc.co.uk/weather/" target="_blank"> Weather  </a></li>
+
+						<li><a href="http://www.bbc.com/capital/" target="_blank"> Capital  </a></li>
+
+						<li><a href="http://www.bbc.com/future/" target="_blank"> Future  </a></li>
+
+						<li><a href="http://shop.bbc.com/" target="_blank"> Shop  </a></li>
+
+						<li><a href="http://www.bbc.com/tv/" target="_blank"> TV  </a></li>
+
+						<li><a href="http://www.bbc.com/radio/" target="_blank"> Radio  </a></li>
+
+						<li><a href="http://www.bbc.com/a-z/" target="_blank"> More...  </a></li>
+
+					</ul>
+
+				</div>
+
+				
+
+				<div id="searchbar">
+
+					<input type="text" placeholder="Search">
+
+					</input>
+
+				</div>
+
+								
+
+			</div>
+
+						
+
+		</div>
+
+		
+
+		<div class="break">
+
+		</div>
+
+			
+
+		<div id="newsbar">
+
+			<div class="fixedwidth">
+
+		
+
+				<p id="newsheader">NEWS<span id="uk">UK</span></p>	
+
+				
+
+				<div id="rss">
+
+					<p>RSS<img src="images/rss.png"/></p>
+
+				</div>
+
+			
+
+				<div class="break">
+
+				</div>
+
+			
+
+				<div id="topicmenu">
+
+					<ul>
+
+						<li> Home </li>
+
+						<li> World </li>
+
+						<li> Asia </li>
+
+						<li> India </li>
+
+						<li> China </li>
+
+						<li class="selected"> UK </li>
+
+						<li> Business </li>
+
+						<li> Health </li>
+
+						<li> Science/Environment </li>
+
+						<li> Technology </li>
+
+						<li> Entertainment</li>
+
+						<li style="border-right:none"> Video</li>
+
+					</ul>	
+
+				</div>				
+
+			</div>
+
+						
+
+		</div>
+
+		
+
+		<div class="break">
+
+		</div>
+
+		
+
+		<div id="content">
+
+			<div class="fixedwidth">
+
+				<p><span class="date">24 August 2014</span>Last updated at 15:58</p>
+
+			
+
+				<h1><a href="http://www.bbc.com/news/uk-28919831" target="_blank">British Ebola patient flying to UK</a></h1>
+
+				<img class="headlineimage" src="images/headlineimage.jpg"></img>
+
+				
+
+				<div class="newsitem">
+
+					<p> A British national who contracted the Ebola virus in Sierra Leone is being flown back to the UK on an RAF jet, UK health officials say. </p>
+
+					
+
+					<p class="links"><a href="http://www.bbc.com/news/uk-28919831" target="_blank">'Ebola risk to the UK remains very low' </a><br />
+
+					
+
+					<a class="videolink" href="http://www.bbc.com/news/health-28105531"target="_blank">Watch Why Ebola is so dangerous</a><br />
+
+			
+
+					<a class="videolink" href="http://www.bbc.com/news/world-africa-28754546" target="_blank">Ebola: Mapping the outbreak Sierra Leone country profile</a><br />
+
+					
+
+					<a class="videolink" href="http://www.bbc.com/news/world-africa-28914791" target="_blank">S Leone to punish hiding Ebola cases</a><br />
+
+
+
+					</p>
+
+					
+
+				</div>
+
+				
+
+				<div id="watchlisten">
+
+				
+
+					<img class="boxes" src="images/boxes.png">
+
+					</img>
+
+					<h2>Watch/Listen</h2>
+
+					
+
+					<img class="leftarrow" src="images/leftarrow.png" />
+
+
+						<div class="watchblock"> 
+						
+						
+							<img src="images/watch1.png" width="157px"> </img>
+
+							<p><a href="http://www.bbc.co.uk/religion/religions/islam/history/slavery_1.shtml"> 'A version of Islam never seen before'</p>
+
+						</div> <!--- end watchblock -->
+
+						<div class="watchblock">
+
+							<img src="images/watch2.png" width="157px"> </img>
+
+							<p><a href="http://www.bbc.com/news/business-28883053"> Brighton pier How to have a day out on the cheap </p>
+
+						</div> <!--- end watchblock -->
+
+					<img class="rightarrow" src="images/rightarrow.png"> </img>
+
+					</div> <!-- end watchlisten -->
+
+					<div class="break">
+
+					</div>
+
+					
+
+					<ul>
+
+						<li class="border"><a href="http://www.bbc.co.uk/news/video_and_audio/">BBC News Channel</a></li>
+
+						<li class="border"><a href="http://www.bbc.co.uk/5live">Radio 5 Live </a></li>
+
+						<li><a href="http://www.theguardian.com/politics/blog/2014/may/14/cameron-and-miliband-at-pmqs-politics-live-blog">Osbourne questioned on budget</a></li>
+
+					</ul>
+
+					
+
+				</div>
+
+					
+
+					
+
+					
+
+				</div>
+
+				
+
+			</div>
+
+		</div>
+
+		
+
+		
+
+		
+
+	</div> <!--end content -->
+	
+	</body>
+	
+	</html>
+	
+	
+
+		
+
+		
+
+		
+
+	</div>
+
+</body>
+
+</html>
